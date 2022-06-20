@@ -77,6 +77,7 @@ async def reload(ctx, *, arg1):
         print(f"[Cog] An unexpected error has occurred: {e}")
 
 bot.load_extension("cogs.Main")
+bot.load_extension("cogs.ErrorHandler")
 keep_alive()
 bot.run('token')
 
