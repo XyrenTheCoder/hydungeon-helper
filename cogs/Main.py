@@ -1,31 +1,18 @@
 # modules
-# lines 1461 -> 1173
-# 1173 -> 1166
 import random
 import json
 import os
 import discord
-import asyncio
 import datetime
 import time
-import cmath
 import math
 import string
-import praw
-import prawcore
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from datetime import datetime
-from random import randint
 from discord.errors import InvalidArgument
 from discord.ext import commands
 from discord.ext.commands import *
 # end of modules
 
-owner = ["αrchιshα#5518", "notsniped#4573", "thatOneArchUser#5794"]
-oid = [706697300872921088, 738290097170153472, 705462972415213588]
-reddit = praw.Reddit(client_id='reddit_client_id',
-                     client_secret='reddit_client_secret',
-                     user_agent='idk', check_for_async=False)
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 
