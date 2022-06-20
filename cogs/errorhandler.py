@@ -1,6 +1,7 @@
 # modules
 import os
 import discord
+import math
 import datetime
 import time
 from datetime import datetime
