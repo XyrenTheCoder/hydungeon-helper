@@ -9,7 +9,7 @@ from discord.ext.commands import *
 from keep_alive import keep_alive
 # end of modules
 
-bot = commands.Bot(command_prefix=']', intents=discord.Intents.all())
+bot = commands.Bot(command_prefix=',', intents=discord.Intents.all())
 owner = ["thatOneArchUser#5518", "valid-user#0300"]
 oid = [706697300872921088, 705462972415213588]
 bot.remove_command('help')
@@ -20,9 +20,7 @@ async def on_ready():
     if os.name == 'nt': os.system('cls')
     else: os.system('clear')
     print(f'\n> {bot.user} HAS CONNECTED TO DISCORD.\n\n> OWNER:\n')
-    print("o")
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="Hypixel skyblock"))
-    print(f'[log] Log is loading...')
     print(f'[log] {bot.user} changed its activity.')
 # end of startup
 
