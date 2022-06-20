@@ -19,7 +19,7 @@ bot.remove_command('help')
 async def on_ready():
     if os.name == 'nt': os.system('cls')
     else: os.system('clear')
-    print(f'\n> {bot.user} HAS CONNECTED TO DISCORD.\n\n> OWNER:\n')
+    print(f'\n> {bot.user} HAS CONNECTED TO DISCORD.\n\n')
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="Hypixel skyblock"))
     print(f'[log] {bot.user} changed its activity.')
 # end of startup
