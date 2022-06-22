@@ -1,5 +1,5 @@
 # modules
-import os, discord, datetime, math
+import os, discord, datetime, math, json
 from datetime import datetime
 from discord.errors import InvalidArgument
 from discord.ext import commands
@@ -29,12 +29,13 @@ class MainCog(commands.Cog):
     async def help(self, ctx, command=None):
         if command == None:
             q = str()
+            with open("cmds.json") as f: cmds = json.load(f)
             for command in list(cmds.keys()): #need to load a dict with name cmds
                 q += f"{command}{',' if list(cmds.keys()).index(command) != len(list(cmds.keys()))-1 else ''}"
-            await ctx.reply(embed=discord.Embed(title="help", description=q, color=discord.Color.random())
+            await ctx.reply(embed=discord.Embed(title="Commands", description=q, color=discord.Color.random()))
         else:
-            if command.lower() not in list(cmds.keys()): raise BadArgument
-            await ctx.reply(embed=discord.Embed(title=f"help for command {command}", description=cmds[command.lower()], color=discord.Color.random())
+            if command.lower() not in list(cmds.keys()): raise InvalidArgument
+            await ctx.reply(embed=discord.Embed(title=f"help for command {command}", description=cmds[command.lower()], color=discord.Color.random()))
                             
     @commands.command(aliases=['eta'])
     @commands.cooldown(1, 5, commands.BucketType.user)
