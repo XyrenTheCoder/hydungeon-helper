@@ -12,18 +12,7 @@ current_time = now.strftime("%H:%M:%S")
 class MainCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
-    @commands.command()
-    async def help(self, ctx, command=None):
-    if command == None:
-        q = str()
-        for command in list(cmds.keys()): #need to load a dict with name cmds
-        q += f"{command}{',' if list(cmds.keys()).index(command) != len(list(cmds.keys()))-1 else ''}"
-        await ctx.reply(embed=discord.Embed(title="help", description=q, color=discord.Color.random())
-    else:
-        if command.lower() not in list(cmds.keys()): raise BadArgument
-        await ctx.reply(embed=discord.Embed(title=f"help for command {command}", description=cmds[command.lower()], color=discord.Color.random())
-
+        
 # least values:
 # Health: 110
 # Defense: 0
@@ -36,6 +25,17 @@ class MainCog(commands.Cog):
 # floor: 1-7
 
     # cmds
+    @commands.command()
+    async def help(self, ctx, command=None):
+        if command == None:
+            q = str()
+            for command in list(cmds.keys()): #need to load a dict with name cmds
+                q += f"{command}{',' if list(cmds.keys()).index(command) != len(list(cmds.keys()))-1 else ''}"
+            await ctx.reply(embed=discord.Embed(title="help", description=q, color=discord.Color.random())
+        else:
+            if command.lower() not in list(cmds.keys()): raise BadArgument
+            await ctx.reply(embed=discord.Embed(title=f"help for command {command}", description=cmds[command.lower()], color=discord.Color.random())
+                            
     @commands.command(aliases=['eta'])
     @commands.cooldown(1, 5, commands.BucketType.user)
     async def etime(self, ctx, floor:int, damage:int):
