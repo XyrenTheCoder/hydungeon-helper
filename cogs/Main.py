@@ -58,7 +58,7 @@ class MainCog(commands.Cog):
     @commands.command(aliases=['srate'])
     @commands.cooldown(1, 5, commands.BucketType.user)
     async def survive(self, ctx, floor:int, ehp:int):
-        if floor < 0 or floor > 7 or ehp < 110:
+        if floor < 1 or floor > 7 or ehp < 110:
             await ctx.reply('Please enter a valid floor number (1-7) and a valid Effective Health value (>=110)')
         elif floor == 1:
             r = ehp/500
