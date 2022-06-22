@@ -1,11 +1,5 @@
 # modules
-import random
-import json
-import os
-import discord
-import datetime
-import time
-import math
+import os, discord, datetime, math
 from datetime import datetime
 from discord.errors import InvalidArgument
 from discord.ext import commands
