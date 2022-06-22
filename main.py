@@ -1,18 +1,15 @@
 # modules
-import os
-import discord
-import datetime
-import time
+import os, time, datetime, discord
 from discord.errors import InvalidArgument
 from discord.ext import commands
 from discord.ext.commands import *
 from keep_alive import keep_alive
 # end of modules
 
-bot = commands.Bot(command_prefix=',', case_insensitive=True, intents=discord.Intents.all())
+bot = commands.Bot(command_prefix=',', case_insensitive=True)
 owner = ["thatOneArchUser#5518", "valid-user#0300"]
 oid = [706697300872921088, 705462972415213588]
-bot.remove_command('help')
+#bot.remove_command('help')
 
 # when ready
 @bot.event
@@ -21,13 +18,11 @@ async def on_ready():
     else: os.system('clear')
     print(f'\n> {bot.user} HAS CONNECTED TO DISCORD.\n\n')
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="Hypixel skyblock"))
-    print(f'[log] {bot.user} changed its activity.')
 # end of startup
 
 @bot.command()
 async def load(ctx, *, arg1):
-    if ctx.message.author.id in oid:
-        pass
+    if ctx.message.author.id in oid: pass
     else:
         await ctx.reply(f"You can\'t use this command")
         print(f"[Cog] {ctx.author} returned an error: User Missing Permission.")
@@ -43,8 +38,7 @@ async def load(ctx, *, arg1):
 
 @bot.command()
 async def unload(ctx, *, arg1):
-    if ctx.message.author.id in oid:
-        pass
+    if ctx.message.author.id in oid: pass
     else:
         await ctx.reply(f"You can\'t use this command")
         print(f"[Cog] {ctx.author} returned an error: User Missing Permission.")
@@ -60,8 +54,7 @@ async def unload(ctx, *, arg1):
         
 @bot.command()
 async def reload(ctx, *, arg1):
-    if ctx.message.author.id in oid:
-        pass
+    if ctx.message.author.id in oid: pass
     else:
         await ctx.reply(f"You can\'t use this command")
         print(f"[Cog] {ctx.author} returned an error: User Missing Permission.")
