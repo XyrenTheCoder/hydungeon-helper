@@ -1,5 +1,5 @@
 # hydungeon-helper
-Im a bot who can help you through your journey in Hydungeon!
+A Discord bot which can help you through your journey in Hydungeon!
 ## features
 > calculate your Estimated Time (aka: etime) in different Catacombs floors
 
