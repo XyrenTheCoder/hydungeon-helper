@@ -1,3 +1,5 @@
 {
-    "ehp":"test"
+    "help":"helps",
+    "ehp":"calculate your Effective Health (aka: ehealth or ehp) in one simple step",
+    "eta":"calculate your Estimated Time (aka: etime) in different Catacombs floors"
 }
