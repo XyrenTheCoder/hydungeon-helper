@@ -27,9 +27,9 @@ class MainCog(commands.Cog):
     # cmds
     @commands.command()
     async def help(self, ctx, command=None):
+        with open("cmds.json") as f: cmds = json.load(f)
         if command == None:
             q = str()
-            with open("cmds.json") as f: cmds = json.load(f)
             for command in list(cmds.keys()): #need to load a dict with name cmds
                 q += f"{command}{',' if list(cmds.keys()).index(command) != len(list(cmds.keys()))-1 else ''}"
             await ctx.reply(embed=discord.Embed(title="Commands", description=q, color=discord.Color.random()))
