@@ -23,8 +23,7 @@ async def on_ready():
 
 @bot.command()
 async def load(ctx, *, arg1):
-    if ctx.message.author.id in oid:
-        pass
+    if ctx.message.author.id in oid: pass
     else:
         await ctx.reply(f"You can\'t use this command")
         print(f"[Cog] {ctx.author} returned an error: User Missing Permission.")
@@ -40,8 +39,7 @@ async def load(ctx, *, arg1):
 
 @bot.command()
 async def unload(ctx, *, arg1):
-    if ctx.message.author.id in oid:
-        pass
+    if ctx.message.author.id in oid: pass
     else:
         await ctx.reply(f"You can\'t use this command")
         print(f"[Cog] {ctx.author} returned an error: User Missing Permission.")
@@ -57,8 +55,7 @@ async def unload(ctx, *, arg1):
         
 @bot.command()
 async def reload(ctx, *, arg1):
-    if ctx.message.author.id in oid:
-        pass
+    if ctx.message.author.id in oid: pass
     else:
         await ctx.reply(f"You can\'t use this command")
         print(f"[Cog] {ctx.author} returned an error: User Missing Permission.")
