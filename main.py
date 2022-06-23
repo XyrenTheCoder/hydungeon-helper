@@ -1,15 +1,12 @@
 # modules
-import os
-import discord
-import datetime
-import time
+import os, discord, datetime
 from discord.errors import InvalidArgument
 from discord.ext import commands
 from discord.ext.commands import *
 from keep_alive import keep_alive
 # end of modules
 
-bot = commands.Bot(command_prefix=',', intents=discord.Intents.all())
+bot = commands.Bot(command_prefix=',', casw_sensitive=True)
 owner = ["thatOneArchUser#5518", "valid-user#0300"]
 oid = [706697300872921088, 705462972415213588]
 bot.remove_command('help')
